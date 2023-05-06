@@ -1,0 +1,1 @@
+INSERT INTO fur_colors (fur_color) VALUES ('White'), ('Black'), ('Grey'), ('Light Grey'), ('Dark Grey'), ('Orange'), ('Brown')
