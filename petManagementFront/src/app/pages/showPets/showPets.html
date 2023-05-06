@@ -1,0 +1,141 @@
+
+<div class="container" id="table-container">
+  <div class="row gx-0 mb-5 mt-2">
+    <button (click)="redirectToAddPage()" class="btn btn-success col-5 col-md-3 col-xl-2">AddPet</button>
+    <span>Hello {{this.username}}</span>
+    <button (click)="signOut()" class="btn btn-danger col-5 col-md-3 col-xl-2 ms-auto">Sign Out</button>
+  </div>
+  <div class="table-responsive">
+    <!--TABLE-->
+    <table class="table table-striped" style="font-size:20px;">
+      <!--THEAD-->
+      <thead>
+        <tr>
+          <th>Edit</th>
+          <th>№</th>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Type</th>
+          <th>Fur color</th>
+          <th>Country</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <!--/THEAD-->
+
+      <!--TBODY-->
+      <tbody>
+        <tr *ngFor="let pet of pets; let i = index">
+          <td><button class="btn btn-outline-dark" (click)="onOpenModal(pet, 'update')" style="font-size: 20px;"><i class="bi bi-pencil-fill"></i></button></td>
+          <td>{{i + 1}}</td>
+          <td>{{pet?.name}}</td>
+          <td>{{pet?.code}}</td>
+          <td>{{pet?.petType}}</td>
+          <td>{{pet?.furColor}}</td>
+          <td>{{pet?.country}}</td>
+          <td class="col-1"><button class="btn btn-outline-danger" (click)="onOpenModal(pet, 'delete')" style="font-size: 20px;"><i class="bi bi-x"></i></button></td>
+        </tr>
+      </tbody>
+      <!--/TBODY-->
+    </table>
+    <!--/TABLE-->
+    <div *ngIf="pets.length == 0">
+      <h3 class="text-center">You have not added any animals yet</h3>
+    </div>  
+  </div>
+</div>
+
+
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="updateModalLabel">Edit pet</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- updateForm -->
+      <form #updateForm="ngForm" (ngSubmit)="onUpdatePet(updateForm.value, updateForm)">
+        <div class="modal-body">
+          <input  ngModel="{{updatePet?.id}}" type="hidden" name="id" />
+
+          <!-- input for pet name -->
+          <div class="mb-4 row">
+            <label class="col-sm-6 col-form-label text-end" for="name">Name</label>
+            <div class="col-sm-6 text-center">
+              <input ngModel="{{updatePet?.name}}" #name="ngModel" type="text" name="name" class="form-control" placeholder="Name" required maxlength="16"/>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+                <div *ngIf="name.errors?.['required']">*Name is required.</div>
+                <div *ngIf="name.errors?.['maxlength']">Name cannot be over 16 symbols</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- input for pet code -->
+          <div class="mb-4 row">
+            <label class="col-sm-6 col-form-label text-end" for="code">Code</label>
+            <div class="col-sm-6 text-center">
+              <input ngModel="{{updatePet?.code}}" #code="ngModel" type="text" name="code" class="form-control" placeholder="Code" required maxlength="24" />
+              <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert">
+                <div *ngIf="code.errors?.['required']">*Code is required.</div>
+                <div *ngIf="code.errors?.['maxlength']">Code cannot be over 24 symbols</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- select for pet type -->
+          <div class="mb-4 row">
+            <label class="col-sm-6 col-form-label text-end" for="petType">Type</label>
+            <div class="col-sm-6 text-center">
+              <select ngModel="{{updatePet?.petType}}" name="petType" class="form-select" required>
+                <option *ngFor="let petType of petTypes" value="{{petType?.petType}}" [selected]="petType?.petType==updatePet?.petType">{{petType?.petType}}</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- select for pet fur color -->
+          <div class="mb-4 row">
+            <label class="col-sm-6 col-form-label text-end" for="furColor">Fur color</label>
+            <div class="col-sm-6 text-center">
+              <select ngModel="{{updatePet?.furColor}}" name="furColor" class="form-select" required>
+                <option *ngFor="let furColor of furColors" value="{{furColor?.furColor}}" [selected]="furColor?.furColor==updatePet?.furColor">{{furColor?.furColor}}</option>
+                </select>
+            </div>
+          </div>
+
+          <!-- select for pet country -->
+          <div class="mb-4 row">
+            <label class="col-sm-6 col-form-label text-end" for="country">Country</label>
+            <div class="col-sm-6 text-center">
+              <select ngModel="{{updatePet?.country}}" name="country" class="form-select" required>
+                <option *ngFor="let country of countries" value="{{country?.country}}" [selected]="country?.country==updatePet?.country">{{country?.country}}</option>
+              </select>
+            </div>
+          </div>
+          <input type="hidden" [(ngModel)]="uid" name="userid" id="userid" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteModalLabel">Delete pet</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure want to delete pet?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button (click)="onDeletePet(deletePet.id)" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

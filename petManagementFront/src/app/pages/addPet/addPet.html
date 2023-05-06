@@ -1,0 +1,60 @@
+<div class="container" style="font-size: 20px;">
+    <div class="row gx-0 mb-5 mt-2">
+        <button (click)="redirectToTablePage()" class="btn btn-success col-5 col-md-3 col-xl-2">Show my pets</button>
+        <button (click)="signOut()" class="btn btn-danger col-5 col-md-3 col-xl-2 ms-auto">Sign Out</button>
+      </div>
+    <h1 class="text-center mb-5 mt-2">Add a new pet</h1>
+    <form id="addForm" #addForm="ngForm" (ngSubmit)="onAddPet(addForm)">
+        <div class="mb-4 col-9 mx-auto">
+            <label class="col me-4 text-end col-form-label" for="name">Name</label>
+            <input type="text" ngModel class="form-control" id="name" #name="ngModel" name="name" placeholder="Name" required maxlength="16"/>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+                <div *ngIf="name.errors?.['required']">*Name is required.</div>
+                <div *ngIf="name.errors?.['maxlength']">Name cannot be over 16 symbols</div>
+            </div>
+
+        </div>
+
+        
+        <div class="mb-4 col-9 mx-auto">
+            <label class="col me-4 text-end col-form-label" for="code">Code</label>
+            <input type="text" ngModel class="form-control" id="code" #code="ngModel" name="code" placeholder="Code" required maxlength="24" />
+            <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert">
+                <div *ngIf="code.errors?.['required']">*Code is required.</div>
+                <div *ngIf="code.errors?.['maxlength']">Code cannot be over 24 symbols</div>
+            </div>
+        </div>
+
+        <div class="mb-4 col-9 mx-auto">
+            <label class="col me-4 text-end col-form-label" for="petType">Type</label>
+            <select ngModel name="petType" class="form-select" placeholder="Type" required>
+                <option value="" disabled selected>Choose...</option>
+                <option *ngFor="let petType of petTypes" value="{{petType?.petType}}">{{petType?.petType}}</option>
+            </select>
+        </div>
+
+        <div class="mb-4 col-9 mx-auto">
+            <label class="col me-4 text-end col-form-label" for="furColor">Fur color</label>
+            <select ngModel name="furColor" class="form-select" required>
+                <option value="" disabled selected>Choose...</option>
+                <option *ngFor="let furColor of furColors" value="{{furColor?.furColor}}">{{furColor?.furColor}}</option>
+            </select>
+        </div>
+
+        <div class="mb-4 col-9 mx-auto">
+            <label class="col me-4 text-end col-form-label" for="country">Country</label>
+            <select ngModel #contry="ngModel" name="country" class="form-select" required>
+                <option value="" disabled selected>Choose...</option>
+                <option *ngFor="let country of countries" value="{{country?.country}}">{{country?.country}}</option>
+            </select>
+            <div *ngIf="contry.invalid && (contry.dirty || contry.touched)" class="alert">
+                <div *ngIf="contry.errors?.['required']">*Country is required.</div>
+            </div>
+        </div>
+        <input type="hidden" [(ngModel)]="uid" name="userid" id="userid" />
+        <div class="text-center">
+            <button type="submit"  [disabled]="addForm.invalid" class="btn btn-outline-dark col-9">Add</button>
+        </div>
+    </form>
+    
+</div>
