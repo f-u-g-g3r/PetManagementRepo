@@ -32,3 +32,4 @@ You can create, edit and delete pets.
 - Angular 15.2.7.
 - Maven 3.8.8
 - Bootstrap 5
+- Spring Boot 3.0.6 
