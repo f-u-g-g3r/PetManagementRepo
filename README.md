@@ -4,7 +4,7 @@
 
 ## Deployment
 ### Back-end project deployment
-[Download Petmanagement-1.jar (Link to oneDrive due to the github file size limit)](https://1drv.ms/u/s!AvuwRw-ytGNpgyRRwQYbRo-16cVk?e=Lohq86)
+[Download Petmanagement-1.jar](https://1drv.ms/u/s!AvuwRw-ytGNpgyRRwQYbRo-16cVk?e=Lohq86) (Link to oneDrive due to file size limit on github)
 
 1. Download file `PetManagement-1.jar`.
 2. You can start this file through a command prompt or terminal by command `java -jar PetManagement-1.jar`. 
