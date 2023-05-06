@@ -1,3 +1,0 @@
-sources:
-liquibase: https://www.youtube.com/watch?v=lf6Mxb9rVng
-h2 db: https://www.youtube.com/watch?v=PSrHcCwvfVQ
