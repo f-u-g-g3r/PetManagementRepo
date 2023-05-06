@@ -29,9 +29,7 @@ You can log in as one of these users and create pets which will only belong to t
 You can create, edit and delete pets.
 ## Versions
 - Java SE 19
-- Spring Boot 3.0.6 
+- Spring Boot 3.0.6
 - Angular 15.2.7
 - Bootstrap 5
 - Maven 3.8.8
-
-
