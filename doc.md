@@ -72,6 +72,11 @@ I decided to try to create functionality with users, it was the most difficult p
 6. I created a login form.
 7. I decided to make that if user is logged in there is a variable that stores his ID and if this variable is empty, the user is forwarded to the login page.
 
+Usernames and passwords to log in:
+1. login: **_User1_**; password: **_1234512345_**
+2. login: **_User2_**; password: **_5432154321_**
+3. login: **_User3_**; password: **_123123123_**
+
 So, user is not allowed to see other user’s pets, only his own.
 
 ## Summary, problems & questions
