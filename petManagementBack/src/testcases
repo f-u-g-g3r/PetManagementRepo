@@ -1,0 +1,24 @@
+{
+    "name": "Bob",
+    "petType": "Cat",
+    "furColor": "Grey",
+    "country": "Estonia"
+}
+{
+    "name": "Mike",
+    "petType": "Dog",
+    "furColor": "Black",
+    "country": "Denmark"
+}
+{
+    "name": "Jasmine",
+    "petType": "Mouse",
+    "furColor": "White",
+    "country": "Germany"
+}
+{
+    "name": "Snezhok",
+    "petType": "Cat",
+    "furColor": "White",
+    "country": "China"
+}

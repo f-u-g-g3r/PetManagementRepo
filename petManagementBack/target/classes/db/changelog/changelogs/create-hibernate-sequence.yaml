@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: defaultSequenceForSpringBootJPA
+      author: admin
+      changes:
+        - createSequence:
+            cacheSize: 371717
+            catalogName: pet
+            cycle: true
+            dataType: int
+            incrementBy: 50
+            maxValue: 100000
+            minValue: 10
+            ordered: true
+            schemaName: public
+            sequenceName: PETS_SEQ
+            startValue: 70
