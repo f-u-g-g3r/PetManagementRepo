@@ -1,6 +1,10 @@
 # Pet Management Application
 
 
+## Development documentation
+
+File with all notes and thoughts about the solutions .
+
 
 ## Deployment
 ### Back-end project deployment
@@ -27,10 +31,6 @@ There are 3 user accounts that were created when the back-end application starte
 You can log in as one of these users and create pets which will only belong to the user you choose. Other users will not be able to see these pets.
 
 You can create, edit and delete pets.
-
-## Development documentation
-
-File with all notes and thoughts about the solutions.
 
 ## Versions
 - Java SE 19
