@@ -3,7 +3,7 @@
 
 ## Development documentation
 
-File with all notes and thoughts about the solutions .
+[File with all notes and thoughts about the solutions.](doc.md)
 
 
 ## Deployment
