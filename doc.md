@@ -8,6 +8,7 @@ so I spent two weeks to everyday practise and learn something new.
 First, I started searching about what I need to create a RESTful application on Java & Spring.
 
 Model, service, resource, repository. This is what I needed to do.
+
     - Model should store all the data logic.
     - Service contains all the CRUD methods.
     - Controller receives requests and sends responses.
@@ -25,7 +26,7 @@ I found 2 useful videos on youtube about this:
 
 There was a problem for me with `hibernate_sequence` for the liquibase, I can't fully understand what is that and if I don't configure this, my database won't work.
 
-When I configure liquibase and h2 database, I created sql script that creates `Pets` table in the database.
+When I configured liquibase and h2 database, I created sql script that creates `Pets` table in the database.
 
 ### Testing
 
