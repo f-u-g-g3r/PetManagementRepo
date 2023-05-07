@@ -1,1 +1,0 @@
-INSERT INTO Countries (country) VALUES('Estonia'), ('Sweden'), ('Lithuania'), ('China'), ('Russia'), ('Netherlands'), ('Japan')

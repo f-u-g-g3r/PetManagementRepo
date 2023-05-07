@@ -1,1 +1,0 @@
-INSERT INTO pet_types (pet_type) VALUES('Cat'), ('Dog'), ('Bunny'), ('Rabbit'), ('Mouse'), ('Hamster')
