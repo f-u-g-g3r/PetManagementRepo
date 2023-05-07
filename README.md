@@ -28,7 +28,7 @@ You can log in as one of these users and create pets which will only belong to t
 
 You can create, edit and delete pets.
 
-### Development documentation
+## Development documentation
 
 File with all notes and thoughts about the solutions.
 
