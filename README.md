@@ -10,12 +10,18 @@
 ### Back-end project deployment
 [Download Petmanagement-1.jar](https://1drv.ms/u/s!AvuwRw-ytGNpgyXPo_8pRzKBt59v?e=KiM6zW) (Link to oneDrive due to file size limit on github)
 
+**You must have installed at least JDK version 18!**
+
 1. Download file `PetManagement-1.jar`.
 2. You can start this file through a command prompt or terminal by command `java -jar PetManagement-1.jar`. 
 **Make sure that you are in the same directory in the command prompt or terminal as the file!**
 3. After these steps, the server should start.
 
+
 ### Front-end project deployment
+
+**You must have installed Node js!**
+
 1. Download folder `petManagementFront`.
 2. Open a command prompt or terminal and change your directory to the `petManagementFront` folder path.
 2. Run `npm install` to install node modules.
